@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.2'
+ruby '2.1.0'
 #ruby-gemset=websocket-chat
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -27,6 +27,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'websocket-rails'
 gem 'devise'
+gem 'foundation-rails'
 
 group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
@@ -34,7 +35,7 @@ group :development, :test do
 
   gem 'minitest'
   gem 'rspec-rails'
-  gem "factory_girl_rails", "~> 4.0"
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 # Use ActiveModel has_secure_password
