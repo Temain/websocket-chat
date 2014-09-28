@@ -6,7 +6,7 @@ class ChatController < WebsocketRails::BaseController
   end
 
   def get_posts
-    posts = Message.all
+    posts = Post.all
     trigger_success posts
   end
 
@@ -14,10 +14,8 @@ class ChatController < WebsocketRails::BaseController
     post = Post.new(text: message["text"])
     post.user = current_user
     if post.save
-      WebsocketRails[:posts].trigger 'new', post
-    else
-
+      WebsocketRails[:posts].trigger 'append_post', post
     end
-    #trigger_success message
+    trigger_failure  reason: 'the post is incorrect'
   end
 end

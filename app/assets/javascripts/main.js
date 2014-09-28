@@ -20,10 +20,15 @@ $( document ).ready(function(){
             $chat.delegate("#send", "click", function(){ _this.send_post(this) });
         },
 
+        add_post_to_chat: function(post) {
+            var element = "<div>" + post.text + "</div>";
+            $("#chat").find("#history").append(element);
+        },
+
         connect_to_channel: function() {
             channel = dispatcher.subscribe('posts');
-            channel.bind('new_post', function(post) {
-                console.log('a new post about ' + post.body + ' arrived!');
+            channel.bind('append_post', function(post) {
+                chat.add_post_to_chat(post);
             });
         },
 
@@ -31,8 +36,10 @@ $( document ).ready(function(){
             var success = function(response) {
                 console.log("Success");
                 console.log(response);
-                //var element = "<div>" + response.text + "</div>";
-                //$("#chat").find("#history").append(element);
+                $.each(response, function(index, post) {
+                    chat.add_post_to_chat(post);
+                });
+
             };
 
             var failure = function(response) { console.log('Failure') };
@@ -52,7 +59,7 @@ $( document ).ready(function(){
                 text: this.get_new_post_text()
             };
 
-            dispatcher.trigger('new_post', message, success, failure);
+            dispatcher.trigger('new_post', post, success, failure);
         }
 
     };
