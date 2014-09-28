@@ -15,7 +15,8 @@ class ChatController < WebsocketRails::BaseController
     post.user = current_user
     if post.save
       WebsocketRails[:posts].trigger 'append_post', post
+    else
+      trigger_failure  reason: 'the post is incorrect'
     end
-    trigger_failure  reason: 'the post is incorrect'
   end
 end

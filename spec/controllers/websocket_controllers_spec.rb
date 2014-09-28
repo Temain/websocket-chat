@@ -3,7 +3,7 @@ describe 'Websocket Controllers' do
   describe 'ChatController' do # as it is not a standard Rails Controller we have to use quotes
 
     it 'should trigger a success message on get_posts' do
-      create_event('get_posts', {}).dispatch.should trigger_success_message :any
+      create_event('get_posts', nil).dispatch.should trigger_success_message
     end
 
     it 'should trigger a success message on new_post' do

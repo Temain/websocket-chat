@@ -3,7 +3,7 @@ $( document ).ready(function(){
     var dispatcher = new WebSocketRails('0.0.0.0:3000/websocket');
 
     dispatcher.on_open = function(data) {
-        console.log('Connection has been established: ', data);
+        // console.log('Connection has been established: ', data);
         // You can trigger new server events inside this callback if you wish.
     };
 
@@ -34,15 +34,13 @@ $( document ).ready(function(){
 
         get_posts: function() {
             var success = function(response) {
-                console.log("Success");
-                console.log(response);
                 $.each(response, function(index, post) {
                     chat.add_post_to_chat(post);
                 });
 
             };
 
-            var failure = function(response) { console.log('Failure') };
+            var failure = function(response) { console.log('Failure on get posts') };
 
             dispatcher.trigger('get_posts', {}, success, failure);
         },
@@ -52,8 +50,8 @@ $( document ).ready(function(){
         },
 
         send_post: function(button){
-            var success = function(response) { console.log('Success') };
-            var failure = function(response) { console.log('Failure') };
+            var success = function(response) { };
+            var failure = function(response) { console.log('Failure on send post') };
 
             var post = {
                 text: this.get_new_post_text()
