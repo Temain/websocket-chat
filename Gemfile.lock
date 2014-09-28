@@ -50,6 +50,11 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.2.1)
+    factory_girl (4.1.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.1.0)
+      factory_girl (~> 4.1.0)
+      railties (>= 3.0.0)
     faye-websocket (0.7.4)
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.3.1)
@@ -164,8 +169,10 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
+  factory_girl_rails (~> 4.0)
   jbuilder (~> 2.0)
   jquery-rails
+  minitest
   rails (= 4.1.5)
   rspec-rails
   sass-rails (~> 4.0.3)

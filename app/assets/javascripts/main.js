@@ -17,7 +17,7 @@ $( document ).ready(function(){
             _this.connect_to_channel();
             _this.get_posts();
 
-            $chat.delegate("#send", "click", function(){ _this.send_message(this) });
+            $chat.delegate("#send", "click", function(){ _this.send_post(this) });
         },
 
         connect_to_channel: function() {
@@ -35,9 +35,7 @@ $( document ).ready(function(){
                 //$("#chat").find("#history").append(element);
             };
 
-            var failure = function(response) {
-                console.log('Failure');
-            };
+            var failure = function(response) { console.log('Failure') };
 
             dispatcher.trigger('get_posts', {}, success, failure);
         },
@@ -46,7 +44,7 @@ $( document ).ready(function(){
             return $("#chat").find("#text").val();
         },
 
-        send_message: function(button){
+        send_post: function(button){
             var success = function(response) { console.log('Success') };
             var failure = function(response) { console.log('Failure') };
 
