@@ -1,0 +1,10 @@
+<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+<%= link_to "Sign in", new_user_session_path %> |
+<%= current_user.email if signed_in? %>
+
+<div id="chat">
+  <label for="text">Message</label>
+  <input type="text" id="text"/>
+  <input type="button" id="send" value="Send message"/>
+  <div id="history"></div>
+</div>
