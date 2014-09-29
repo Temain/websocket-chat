@@ -21,7 +21,13 @@ $( document ).ready(function(){
         },
 
         add_post_to_chat: function(post) {
-            var element = "<div class='post'>" + post.text + "</div>";
+            var avatar = "<div class='avatar-mini'></div>";
+            var user = "<div class='username'>user</div>";
+            var datetime = "<div class='datetime'>" + post.created_at + "</div>";
+            var head = "<div class='head'>" + user + datetime + "</div>";
+            var text = "<div class='text'>" + post.text + "</div>";
+            var message = "<div class='message'>" + head + text + "</div>";
+            var element = "<div class='post'>" + avatar + message + "</div>";
             $("#chat").find("#history").append(element);
         },
 
