@@ -1,0 +1,36 @@
+@mixin bordered {
+  border: 1px solid rgb(204, 204, 204);
+}
+
+.header {
+  padding: 5px 0px 25px 0px;
+}
+
+.title, .menu {
+  display: inline-block;
+}
+
+.title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.menu {
+  float: right;
+}
+
+.avatar {
+  @include bordered;
+  height: 200px;
+}
+
+.chat .history {
+  @include bordered;
+  height: 400px;
+  overflow: auto;
+
+  & .post {
+    padding: 15px;
+    border-bottom: 1px dashed rgb(204, 204, 204);
+  }
+}

@@ -21,7 +21,7 @@ $( document ).ready(function(){
         },
 
         add_post_to_chat: function(post) {
-            var element = "<div>" + post.text + "</div>";
+            var element = "<div class='post'>" + post.text + "</div>";
             $("#chat").find("#history").append(element);
         },
 
@@ -49,6 +49,10 @@ $( document ).ready(function(){
             return $("#chat").find("#text").val();
         },
 
+        clear_new_post_text: function(){
+            $("#chat").find("#text").val("");
+        },
+
         send_post: function(button){
             var success = function(response) { };
             var failure = function(response) { console.log('Failure on send post') };
@@ -58,6 +62,7 @@ $( document ).ready(function(){
             };
 
             dispatcher.trigger('new_post', post, success, failure);
+            this.clear_new_post_text();
         }
 
     };
