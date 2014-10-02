@@ -29,6 +29,10 @@ gem 'websocket-rails'
 gem 'devise'
 gem 'foundation-rails'
 
+# This gem provides a simple and extremely flexible way to upload files from Ruby applications.
+gem 'carrierwave'
+gem 'mini_magick'
+
 group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
