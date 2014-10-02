@@ -19,10 +19,10 @@
   float: right;
 }
 
-.avatar {
+/* .avatar {
   @include bordered;
   height: 200px;
-}
+} */
 
 .chat .history {
   @include bordered;
