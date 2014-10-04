@@ -48,4 +48,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
+  version :mini do
+    process :resize_to_fill => [50, 50]
+  end
+
 end
