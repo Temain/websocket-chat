@@ -6,7 +6,7 @@
     <div class="menu">
       <% if signed_in? %>
         <%= link_to "Sign out", destroy_user_session_path, method: :delete %> |
-        <%= current_user.email if signed_in? %>
+        <%= current_user.username if signed_in? %>
       <% else %>
         <%= link_to "Sign in", new_user_session_path %>
       <% end %>

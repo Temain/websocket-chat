@@ -6,7 +6,7 @@ class ChatController < WebsocketRails::BaseController
   end
 
   def get_posts
-    posts = Post.last(50)
+    posts = Post.pure.last(50)
     trigger_success posts
   end
 
