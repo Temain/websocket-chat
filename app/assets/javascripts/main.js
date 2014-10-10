@@ -21,9 +21,9 @@ $( document ).ready(function(){
         },
 
         add_post_to_chat: function(post) {
-            var avatar_uri = (post.avatar == null) ? "/assets/default_avatar.png" : post.avatar.mini.uri;
+            var avatar_uri = (post.user.avatar == null) ? "/assets/default_avatar.png" : post.user.avatar.mini.url;
             var avatar = "<img class='avatar-mini' height='50' width='50' src='" + avatar_uri + "' >";
-            var user = "<span class='username'>" + post.username + "</span>";
+            var user = "<span class='username'>" + post.user.username + "</span>";
             var datetime = "<span class='datetime'>" + post.created_at_ago + " ago</span>";
             var head = "<div class='head'>" + user + datetime + "</div>";
             var text = "<div class='text'>" + post.text + "</div>";
