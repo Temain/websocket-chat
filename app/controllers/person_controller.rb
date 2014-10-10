@@ -1,5 +1,5 @@
 class MainController < ApplicationController
-  def index
-    @user = current_user
+  def upload_avatar
+
   end
 end
