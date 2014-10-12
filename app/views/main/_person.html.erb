@@ -1,17 +1,19 @@
-<div class="avatar-view">
-  <%= image_tag(current_user.avatar.url || "default_avatar.png", size: "200x200") %>
-  <div class="mask">
-    <!-- <%= fa_icon "file-image-o 2x" %> -->
-    <div class="upload-action">
-      <i class="glyphicon glyphicon-arrow-up"></i>
-      <span>Upload avatar</span>
+<div id="person">
+  <div class="avatar-view">
+    <%= image_tag(current_user.avatar.url || "default_avatar.png", size: "200x200") %>
+    <div class="mask">
+      <div class="upload-action">
+        <i class="glyphicon glyphicon-arrow-up"></i>
+        <span>Upload avatar</span>
+      </div>
     </div>
   </div>
+
+  <%= form_tag(upload_avatar_path, multipart: true, class: "upload", id: "upload") do %>
+      <p>
+        <label>My Avatar</label>
+        <%= file_field(:user, :avatar, accept: "image/jpeg,image/png,image/jpg" ) %>
+        <%= submit_tag "Ok", class: "button" %>
+      </p>
+  <% end %>
 </div>
-<%= form_tag(upload_avatar_path, multipart: true, class: "upload") do %>
-    <p>
-      <label>My Avatar</label>
-      <%= file_field(:user, :avatar) %>
-      <%= submit_tag "Ok", class: "button" %>
-    </p>
-<% end %>

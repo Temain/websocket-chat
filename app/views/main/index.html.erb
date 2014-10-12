@@ -2,6 +2,14 @@
 
 <div class="row">
   <div class="small-12 small-centered medium-8 medium-centered large-8 large-centered columns">
+
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, class: "alert-box #{name} radius" do %>
+        <%= msg %>
+        <a href="#" class="close">&times;</a>
+      <% end %>
+    <% end %>
+
     <div class="hide-for-small-only hide-for-medium-only large-4 columns">
       <%= render "main/person" %>
     </div>

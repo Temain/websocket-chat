@@ -75,7 +75,7 @@ $( document ).ready(function(){
     };
 
     chat.init();
-
+    person.init();
 });
 
 

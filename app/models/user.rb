@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :username, :uniqueness => { :case_sensitive => false }
+  validate :avatar_file_size
 
   mount_uploader :avatar, AvatarUploader
 
@@ -18,6 +19,12 @@ class User < ActiveRecord::Base
       where(conditions).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first
     else
       where(conditions).first
+    end
+  end
+
+  def avatar_file_size
+    if avatar.file.size.to_f > 1024 * 100
+      errors.add(:file_size, "You cannot upload a file greater than 100KB.")
     end
   end
 
