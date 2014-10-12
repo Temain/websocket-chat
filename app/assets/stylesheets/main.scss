@@ -60,3 +60,45 @@
     }
   }
 }
+
+.avatar-view {
+  width: 200px;
+  height: 200px;
+
+  .mask{
+    position: absolute;
+    top: 0px;
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+    overflow: visible;
+    border: 100px solid rgba(0,0,0,0.7);
+    box-sizing: border-box;
+    transition: all 0.4s ease-in-out;
+
+    .upload-action {
+      position: relative;
+      width: 200px;
+      top: 70px;
+      left: -90px;
+      opacity: 0;
+      transition: opacity 0.5s 0s ease-in-out;
+    }
+  }
+
+  &:hover .mask {
+    opacity: 1;
+    border: 100px solid rgba(0,0,0,0.7);
+    color: white;
+  }
+
+  &:hover .upload-action {
+    opacity:1;
+    transition-delay: 0.3s;
+    cursor: pointer;
+  }
+}
+
+.upload {
+  visibility: hidden;
+}

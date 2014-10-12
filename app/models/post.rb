@@ -5,9 +5,6 @@ class Post < ActiveRecord::Base
 
   validates :text, presence: true, length: { maximum: 128 }
 
-  scope :pure, -> { joins(:user).select(['text', 'created_at',
-                                         'users.username', 'users.email']) }
-
   def created_at_ago
     time_ago_in_words(created_at)
   end
