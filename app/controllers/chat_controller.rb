@@ -19,4 +19,15 @@ class ChatController < WebsocketRails::BaseController
       trigger_failure  reason: 'the post is incorrect'
     end
   end
+
+  def client_disconnected
+    current_user.online = false
+    current_user.save
+  end
+
+  def client_connected
+    current_user.online = true
+    current_user.save
+  end
+
 end

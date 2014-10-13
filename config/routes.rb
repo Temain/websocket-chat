@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'main#index'
 
   post 'person/upload_avatar' => 'person#upload_avatar', as: :upload_avatar
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
