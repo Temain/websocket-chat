@@ -3,7 +3,7 @@
 }
 
 .header {
-  padding: 5px 0px 25px 0px;
+  padding: 5px 0px;
 }
 
 .title, .menu {
@@ -103,4 +103,45 @@
   visibility: hidden;
   width: 0px;
   height: 0px;
+}
+
+.online {
+  float: right;
+  text-align: center;
+  width: 100px;
+
+  ul {
+    margin: 0px;
+  }
+
+  ul ul {
+    background: white;
+    border: 1px solid #cccccc;
+    display: none;
+    position: absolute;
+    z-index: 100;
+
+    li {
+      float: none;
+      padding: 10px;
+      position: relative;
+    }
+  }
+
+  ul li:hover > ul {
+    display: block;
+  }
+
+  li {
+    list-style: none;
+
+    i {
+      font-style: normal;
+    }
+  }
+}
+
+.clear {
+  margin: 0px;
+  padding: 0px;
 }

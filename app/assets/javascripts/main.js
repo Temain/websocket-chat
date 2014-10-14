@@ -2,12 +2,6 @@ $( document ).ready(function(){
 
     var dispatcher = new WebSocketRails('0.0.0.0:3000/websocket');
 
-    dispatcher.on_open = function(data) { };
-
-    dispatcher.bind('connection_closed', function() {
-        console.log('Connection has been closed.');
-    });
-
     var chat = {
 
         init: function(){
