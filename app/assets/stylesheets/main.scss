@@ -112,19 +112,27 @@
 
   ul {
     margin: 0px;
+    cursor: pointer;
   }
 
   ul ul {
     background: white;
     border: 1px solid #cccccc;
+    border-radius: 3px;
     display: none;
     position: absolute;
     z-index: 100;
+    width: 100px;
+    max-height: 400px;
+    overflow: auto;
 
-    li {
+    img {
+      border: 1px solid #cccccc;
+      border-radius: 3px;
       float: none;
-      padding: 10px;
+      // padding: 10px;
       position: relative;
+      margin: 5px 0px;
     }
   }
 

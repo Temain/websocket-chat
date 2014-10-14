@@ -11,6 +11,7 @@ $( document ).ready(function(){
 
             _this.connect_to_channel();
             _this.get_posts();
+            _this.get_online_list();
 
             $chat.delegate("#send", "click", function(){ _this.send_post(this) });
         },
@@ -28,9 +29,13 @@ $( document ).ready(function(){
         },
 
         connect_to_channel: function() {
-            channel = dispatcher.subscribe('posts');
+            var channel = dispatcher.subscribe('posts');
             channel.bind('append_post', function(post) {
                 chat.add_post_to_chat(post);
+            });
+
+            channel.bind('update_online_list', function(users) {
+                alert("dfgd");
             });
         },
 
@@ -45,6 +50,20 @@ $( document ).ready(function(){
             var failure = function(response) { console.log('Failure on get posts') };
 
             dispatcher.trigger('get_posts', {}, success, failure);
+        },
+
+        get_online_list: function() {
+            var success = function(users) {
+                $("#users_count").text(users.length);
+                $.each(users, function(index, user) {
+                    var avatar_uri = (user.avatar == null) ? "/assets/default_avatar.png" : user.avatar.mini.url;
+                    $("#users_list").append("<img class='avatar-mini' height='50' width='50' src='" + avatar_uri + "' >");
+                });
+            };
+
+            var failure = function(response) { console.log('Failure on update online list') };
+
+            dispatcher.trigger('online_users', {}, success, failure);
         },
 
         get_new_post_text: function(){
