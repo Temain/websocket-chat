@@ -44,7 +44,7 @@ $( document ).ready(function(){
                 $.each(response, function(index, post) {
                     chat.add_post_to_chat(post);
                 });
-
+                $("#history").scrollTop(99999999);
             };
 
             var failure = function(response) { console.log('Failure on get posts') };
@@ -56,7 +56,7 @@ $( document ).ready(function(){
             var success = function(users) {
                 $("#users_count").text(users.length);
                 $.each(users, function(index, user) {
-                    var avatar_uri = (user.avatar == null) ? "/assets/default_avatar.png" : user.avatar.mini.url;
+                    var avatar_uri = (user.avatar.url == null) ? "/assets/default_avatar.png" : user.avatar.mini.url;
                     $("#users_list").append("<img class='avatar-mini' height='50' width='50' src='" + avatar_uri + "' >");
                 });
             };
@@ -90,6 +90,14 @@ $( document ).ready(function(){
 
     chat.init();
     person.init();
+
+
+    /*
+     Close alerts after 5 seconds
+     */
+    window.setTimeout(function() {
+        $(".alert-box a.close").trigger("click.fndtn.alert");
+    }, 5000);
 });
 
 

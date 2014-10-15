@@ -4,14 +4,14 @@
   <div class="small-12 small-centered medium-8 medium-centered large-8 large-centered columns">
 
     <% flash.each do |name, msg| %>
-      <%= content_tag :div, class: "alert-box #{name} radius" do %>
+      <%= content_tag :div, data: { alert: nil }, class: "alert-box #{name} radius" do %>
         <%= msg %>
         <a href="#" class="close">&times;</a>
       <% end %>
     <% end %>
 
     <div class="row">
-      <div class="hide-for-small-only medium-12 large-12 columns clear">
+      <div class="hide-for-small-only medium-12 large-12 columns">
         <%= render "main/online" %>
       </div>
     </div>

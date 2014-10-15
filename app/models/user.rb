@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   end
 
   def avatar_file_size
-    if avatar.file.size.to_f > 1024 * 100
+    if avatar.file && avatar.file.size.to_f > 1024 * 100
       errors.add(:file_size, "You cannot upload a file greater than 100KB.")
     end
   end

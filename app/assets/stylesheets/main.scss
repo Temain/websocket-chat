@@ -118,8 +118,9 @@
   ul ul {
     background: white;
     border: 1px solid #cccccc;
-    border-radius: 3px;
+    // border-radius: 3px;
     display: none;
+    padding: 10px 0px;
     position: absolute;
     z-index: 100;
     width: 100px;
@@ -127,8 +128,8 @@
     overflow: auto;
 
     img {
-      border: 1px solid #cccccc;
-      border-radius: 3px;
+      // border: 1px solid #cccccc;
+      // border-radius: 3px;
       float: none;
       // padding: 10px;
       position: relative;
@@ -152,4 +153,8 @@
 .clear {
   margin: 0px;
   padding: 0px;
+}
+
+.alert-box {
+  margin: 2px;
 }
