@@ -7,13 +7,13 @@ $( document ).ready(function(){
         init: function(){
             var _this = this;
             var $chat = $("#chat");
-            if(!$chat.length) return;
+            if(!$chat.length) { return; }
 
             _this.connect_to_channel();
             _this.get_posts();
             _this.get_online_list();
 
-            $chat.delegate("#send", "click", function(){ _this.send_post(this) });
+            $chat.delegate("#send", "click", function(){ _this.send_post(this); });
         },
 
         add_post_to_chat: function(post) {
@@ -35,7 +35,7 @@ $( document ).ready(function(){
             });
 
             channel.bind('update_online_list', function(users) {
-                alert("dfgd");
+                // TODO update online list when user connected or disconnected
             });
         },
 
@@ -47,7 +47,7 @@ $( document ).ready(function(){
                 $("#history").scrollTop(99999999);
             };
 
-            var failure = function(response) { console.log('Failure on get posts') };
+            var failure = function(response) { console.log('Failure on get posts'); };
 
             dispatcher.trigger('get_posts', {}, success, failure);
         },
@@ -61,7 +61,7 @@ $( document ).ready(function(){
                 });
             };
 
-            var failure = function(response) { console.log('Failure on update online list') };
+            var failure = function(response) { console.log('Failure on update online list'); };
 
             dispatcher.trigger('online_users', {}, success, failure);
         },
@@ -76,7 +76,7 @@ $( document ).ready(function(){
 
         send_post: function(button){
             var success = function(response) { };
-            var failure = function(response) { console.log('Failure on send post') };
+            var failure = function(response) { console.log('Failure on send post'); };
 
             var post = {
                 text: this.get_new_post_text()
