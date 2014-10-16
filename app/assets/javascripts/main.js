@@ -57,7 +57,9 @@ $( document ).ready(function(){
                 $("#users_count").text(users.length);
                 $.each(users, function(index, user) {
                     var avatar_uri = (user.avatar.url == null) ? "/assets/default_avatar.png" : user.avatar.mini.url;
-                    $("#users_list").append("<img class='avatar-mini' height='50' width='50' src='" + avatar_uri + "' >");
+                    $("#users_list").append("<span data-tooltip aria-haspopup='true' class='has-tip tip-right' title='" + user.username +"'>"
+                        + "<img class='avatar-mini' height='50' width='50' src='" + avatar_uri + "'/></span>");
+                    $("#users_list").foundation('tooltip');
                 });
             };
 
