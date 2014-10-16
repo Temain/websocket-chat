@@ -7,7 +7,7 @@ $( document ).ready(function(){
         init: function(){
             var _this = this;
             var $chat = $("#chat");
-            if(!$chat.length) { return; }
+            if(!$chat.length) return;
 
             _this.connect_to_channel();
             _this.get_posts();
