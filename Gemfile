@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.0'
+ruby '2.1.2'
 #ruby-gemset=websocket-chat
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -33,13 +33,15 @@ gem 'foundation-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 gem 'bootstrap-glyphicons'
+gem 'capistrano', '2.15.5'
+gem 'rvm-capistrano'
 
 group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
+  gem 'net-ssh', '2.7.0'
   gem 'minitest'
   gem 'rspec-rails'
   gem 'factory_girl_rails', '~> 4.0'

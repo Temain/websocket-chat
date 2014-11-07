@@ -59,8 +59,8 @@ $( document ).ready(function(){
                     var avatar_uri = (user.avatar.url == null) ? "/assets/default_avatar.png" : user.avatar.mini.url;
                     $("#users_list").append("<span data-tooltip aria-haspopup='true' class='has-tip tip-right' title='" + user.username +"'>"
                         + "<img class='avatar-mini' height='50' width='50' src='" + avatar_uri + "'/></span>");
-                    $("#users_list").foundation('tooltip');
                 });
+                $("#users_list").foundation('tooltip');
             };
 
             var failure = function(response) { console.log('Failure on update online list'); };
