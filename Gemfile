@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.0'
+ruby '2.1.2'
 #ruby-gemset=websocket-chat
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
