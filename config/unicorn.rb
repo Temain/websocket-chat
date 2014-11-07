@@ -1,10 +1,10 @@
-root = "/var/www/sample/current"
+root = "/var/www/websocket-chat/current"
 working_directory root
 pid "#{root}/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"
 stdout_path "#{root}/log/unicorn.log"
 
-listen "/tmp/unicorn.sample.sock"
+listen "/tmp/unicorn.funny.sock"
 worker_processes 1
 timeout 30
 
