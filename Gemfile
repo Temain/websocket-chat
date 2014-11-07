@@ -47,6 +47,10 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'
 end
 
+group :production do
+  gem 'pg', '0.17.1'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
