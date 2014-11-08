@@ -1,7 +1,6 @@
 $( document ).ready(function(){
 
-    // var dispatcher = new WebSocketRails('0.0.0.0:3000/websocket');
-    var dispatcher = new WebSocketRails('temain.tk:80/websocket');
+    var dispatcher = new WebSocketRails('temain.tk:3001/websocket');
 
     var chat = {
 

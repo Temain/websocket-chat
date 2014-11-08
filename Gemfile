@@ -27,6 +27,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'websocket-rails'
 gem 'devise'
+gem 'redis'
 gem 'foundation-rails'
 
 # This gem provides a simple and extremely flexible way to upload files from Ruby applications.

@@ -224,6 +224,7 @@ DEPENDENCIES
   net-ssh (= 2.7.0)
   pg (= 0.17.1)
   rails (= 4.1.5)
+  redis
   rspec-rails
   rvm-capistrano
   sass-rails (~> 4.0.3)
