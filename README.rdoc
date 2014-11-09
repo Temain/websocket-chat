@@ -4,9 +4,9 @@
 ===1. Install Nginx, ImageMagick on server
 
 ===2. Capistrano
-+ cap deploy:setup
-+ Edit #{shared_path}/config/database.yml and add your username and password. Then
-+ cap deploy:cold
+*cap deploy:setup
+*Edit #{shared_path}/config/database.yml and add your username and password. Then
+*cap deploy:cold
 
 Push changes to repo and deploy changes:
 git push origin master
