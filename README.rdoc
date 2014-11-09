@@ -4,9 +4,9 @@
 ====1. Install Nginx, ImageMagick on server
 
 ====2. Capistrano
-* edit deploy.rb
+* edit config/deploy.rb
 * cap deploy:setup
-* edit #{shared_path}/config/database.yml and add your username and password. 
+* edit #{shared_path}/config/database.yml and add your username and password.
 * cap deploy:cold
 
 Push changes to repo and deploy changes:
