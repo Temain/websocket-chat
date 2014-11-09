@@ -7,12 +7,12 @@
 * edit config/deploy.rb
 * <tt>cap deploy:setup</tt>
 * edit #{shared_path}/config/database.yml and add your username and password.
-* cap deploy:cold
+* <tt>cap deploy:cold</tt>
 
 Push changes to repo and deploy changes:
-* git push origin master
-* cap deploy
+* <tt>git push origin master</tt>
+* <tt>cap deploy</tt>
 
 ====3. You can start the standalone server with the websocket_rails:start_server rake task.
-* sudo service nginx start/restart
-* RAILS_ENV=production websocket_rails:start_server
+* <tt>sudo service nginx start/restart</tt>
+* <tt>RAILS_ENV=production websocket_rails:start_server</tt>
