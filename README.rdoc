@@ -9,7 +9,7 @@
 * cap deploy:cold
 
 Push changes to repo and deploy changes:
-git push origin master
-cap deploy
+* git push origin master
+* cap deploy
 
 ===3. You can start the standalone server with the websocket_rails:start_server rake task.
