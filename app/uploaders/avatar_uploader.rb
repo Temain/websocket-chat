@@ -48,6 +48,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
+  # Do not forget install ImageMagic on server!
   version :mini do
     process :resize_to_fill => [50, 50]
   end

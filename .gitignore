@@ -29,6 +29,7 @@
 # if you remove the above rule, at least ignore the follwing:
 
 /public/uploads
+/public/assets
 
 # User-specific stuff:
 # .idea/workspace.xml
