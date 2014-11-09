@@ -23,7 +23,7 @@ $( document ).ready(function(){
         },
 
         add_post_to_chat: function(post) {
-            var avatar_uri = (post.user.avatar == null) ? "/assets/default_avatar.png" : post.user.avatar.mini.url;
+            var avatar_uri = "default_avatar.jpg";
             var avatar = "<img class='avatar-mini' height='50' width='50' src='" + avatar_uri + "' >";
             var user = "<span class='username'>" + post.user.username + "</span>";
             var datetime = "<span class='datetime'>" + post.created_at_ago + " ago</span>";
