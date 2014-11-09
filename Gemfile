@@ -51,7 +51,7 @@ end
 group :production do
   gem 'pg', '0.17.1'
   # Use unicorn as the app server
-  gem 'unicorn'
+  # gem 'unicorn'
 end
 
 # Use ActiveModel has_secure_password
