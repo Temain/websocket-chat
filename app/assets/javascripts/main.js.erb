@@ -1,7 +1,7 @@
 $( document ).ready(function(){
 
     var dispatcher = new WebSocketRails('temain.tk:3001/websocket');
-    //var dispatcher = new WebSocketRails('0.0.0.0:3000/websocket');
+    // var dispatcher = new WebSocketRails('0.0.0.0:3000/websocket');
 
     dispatcher.on_open = function(data) {
         console.log('Connection has been established: ', data);
@@ -23,7 +23,7 @@ $( document ).ready(function(){
         },
 
         add_post_to_chat: function(post) {
-            var avatar_uri = "<%= asset_path('default_avatar.jpg') %>";
+            var avatar_uri = "<%= asset_url('default_avatar.png') %>";
             var avatar = "<img class='avatar-mini' height='50' width='50' src='" + avatar_uri + "' >";
             var user = "<span class='username'>" + post.user.username + "</span>";
             var datetime = "<span class='datetime'>" + post.created_at_ago + " ago</span>";
