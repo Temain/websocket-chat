@@ -5,7 +5,7 @@
 
 ====2. Capistrano
 * edit config/deploy.rb
-* cap deploy:setup
+* <tt>cap deploy:setup</tt>
 * edit #{shared_path}/config/database.yml and add your username and password.
 * cap deploy:cold
 
