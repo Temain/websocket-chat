@@ -14,3 +14,5 @@ Push changes to repo and deploy changes:
 * cap deploy
 
 ====3. You can start the standalone server with the websocket_rails:start_server rake task.
+* sudo service nginx start/restart
+* RAILS_ENV=production websocket_rails:start_server
