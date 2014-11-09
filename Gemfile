@@ -50,6 +50,7 @@ end
 
 group :production do
   gem 'pg', '0.17.1'
+  gem 'thin'
   # Use unicorn as the app server
   # gem 'unicorn'
 end
